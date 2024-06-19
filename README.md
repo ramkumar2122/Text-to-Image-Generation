@@ -47,7 +47,7 @@ cd TAC-GAN
 
 ## 1.2. Download the Dataset
 
-The model presented in the paper was trained on the
+The model was trained on the
 [flowers dataset](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/ ). This
 To train the TAC-GAN on the flowers dataset, first, download the dataset by
 doing the following,
@@ -117,7 +117,7 @@ data_set | String | flowers | Which dataset to use: "flowers"
 model_name | String | model_1 | Name of the model: Can be anything
 train | bool | True | This is True while training and false otherwise. Used for batch normalization
 
-We used the following script (hyper-parameters) in for the results that we show in our paper
+Used the following script (hyper-parameters) in for the results 
 
 ```
 python train.py --t_dim=100 --image_size=128 --data_set=flowers --model_name=TAC_GAN --train=True --resume_model=True --z_dim=100 --n_classes=102 --epochs=400 --save_every=20 --caption_vector_length=4800 --batch_size=128
@@ -168,7 +168,7 @@ To generate images from any text, do the following
 
 ## 3.1 Add Text Descriptions:
 
-Write your text descriptions in a file or use the example file ```Data/text.txt``` that we have provided in the Data directory.
+Write your text descriptions in a file or use the example file ```Data/text.txt``` that have provided in the Data directory.
 The text description file should contain one text description per line. For example,
 
 ```
@@ -197,7 +197,6 @@ python generate_images.py --data_set=flowers --checkpoints_dir=Data/training/TAC
 
 This will create a directory  ```Data/images_generated_from_text/``` with a folder corresponding to every row of the ***text.txt*** file. Each of these folders will contain images for that text.
 
-The following are the parameters you need to set, in case you have used different parameters for training the model.
 
 FLAG | VALUE TYPE | DEFAULT VALUE | DESCRIPTION
 --- | --- | --- | ---
@@ -218,7 +217,7 @@ checkpoints_dir | String | /tmp | Path to the checkpoints directory which will b
 
 # 4. Evaluation
 
-We have used two metrics for evaluating TAC-GAN,
+I have used two metrics for evaluating TAC-GAN,
 
 1. [Inception-Scope](https://github.com/openai/improved-gan/tree/master/inception_score)
 2. [MS-SSIM score](https://github.com/tensorflow/models/blob/master/compression/image_encoder/msssim.py)
@@ -269,8 +268,6 @@ This will create ```Data/msssim.pdf```, which is the ***.pdf*** file of the gene
 
 # 5. Generate Interpolated Images
 
-In our paper we show the effect of interpolating the noise and the text embedding vectors on the generated image. Images are randomply selected and their text descriptions are used to generate synthetic images. The following sub-sections will elaborate on how to do it and which scripts will help you in doing it.
-
 ## 5.1 Z (Noise) Interpolation
 
 For interpolating the noise vector and generating images, use the following scripts
@@ -316,8 +313,6 @@ n_images | int | 500 | Number of images to randomply sample for generating inter
 
 ### TAC-GAN
 
-If you find this code usefull, then please use the following BibTex to cite our work.
-
 ```
 @article{dash2017tac,
   title={TAC-GAN-Text Conditioned Auxiliary Classifier Generative Adversarial Network},
@@ -328,8 +323,6 @@ If you find this code usefull, then please use the following BibTex to cite our 
 ```
 
 ### Oxford-102 Flowers Dataset
-
-If you use the Oxford-102 Flowers Dataset, then please cite their work using the following BibTex.
 
 ```
 @InProceedings{Nilsback08,
@@ -343,7 +336,6 @@ If you use the Oxford-102 Flowers Dataset, then please cite their work using the
 
 ### Skip-Thought
 
-If you use the Skip-Thought model in your work like us, then please cite their work using the following BibTex
 
 ```
 @article{kiros2015skip,
@@ -356,4 +348,4 @@ If you use the Skip-Thought model in your work like us, then please cite their w
 
 ### Code
 
-We have referred to the [text-to-image](https://github.com/paarthneekhara/text-to-image) and [DCGAN-tensorflow](https://github.com/carpedm20/DCGAN-tensorflow) repositories for developing our code, and we are extremely thankful to them.
+I have referred to the [text-to-image](https://github.com/paarthneekhara/text-to-image) and [DCGAN-tensorflow](https://github.com/carpedm20/DCGAN-tensorflow) repositories for developing code, and extremely thankful to them.
